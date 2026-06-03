@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(java -version 2>&1)",
+      "PowerShell(gradle -version 2>&1)",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
