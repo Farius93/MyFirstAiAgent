@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 public class ClaudeClient {
 
+    private static final Model MODEL = Model.of("claude-sonnet-4-6");
+
     private static final String CLARIFICATION_SYSTEM_PROMPT = """
             You are a research assistant helping to scope a research request before conducting
             in-depth research. Your only task right now is to ask clarifying questions.
@@ -67,7 +69,7 @@ public class ClaudeClient {
 
     public String askForClarifications(String topic) {
         MessageCreateParams params = MessageCreateParams.builder()
-                .model(Model.of("claude-sonnet-4-6"))
+                .model(MODEL)
                 .maxTokens(512L)
                 .system(CLARIFICATION_SYSTEM_PROMPT)
                 .addUserMessage("Research topic: " + topic)
@@ -81,13 +83,10 @@ public class ClaudeClient {
         String userPrompt = buildResearchPrompt(topic, questions, answers);
 
         MessageCreateParams params = MessageCreateParams.builder()
-                .model(Model.of("claude-sonnet-4-6"))
+                .model(Model.of("claude-haiku-4-5"))
                 .maxTokens(4096L)
                 .system(RESEARCH_SYSTEM_PROMPT)
                 .addUserMessage(userPrompt)
-                .addTool(WebSearchTool20250305.builder()
-                        .maxUses(5L)
-                        .build())
                 .build();
 
         Message response = client.messages().create(params);
