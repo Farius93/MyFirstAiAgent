@@ -5,7 +5,6 @@ import com.anthropic.models.messages.Message;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
 import com.anthropic.models.messages.TextBlock;
-import com.anthropic.models.messages.WebSearchTool20250305;
 
 import java.util.List;
 import java.util.stream.Collectors;
