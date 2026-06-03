@@ -1,0 +1,28 @@
+PS C:\Programming\MyFirstAiAgent> java -jar build\libs\research-agent-1.0-SNAPSHOT.jar
+================================
+        Research Agent
+================================
+
+Enter research topic: why sky is blue
+
+Generating clarifying questions...
+
+--- Clarifying Questions ---
+
+1. Are you looking for a simple, plain-language explanation or a more technical/scientific deep-dive (e.g., involving physics and wave equations)?
+   Your answer: deep-dive
+
+2. Who is the intended audience ? a general reader, a student at a specific grade level, or a scientific/academic audience?
+   Your answer: general readeer
+
+3. Are you interested only in the core explanation (Rayleigh scattering), or would you also like related topics covered, such as why sunsets are red/orange or why the sky on other planets looks different?
+   Your answer: im interested also in sunsets colors
+
+4. Do you need historical context about how scientists discovered and explained this phenomenon?
+   Your answer: yes
+
+Researching with web search... (this may take 30-60 seconds)
+
+Report saved to: output\why-sky-is-blue_20260603_123455.md
+Done!
+PS C:\Programming\MyFirstAiAgent>
